@@ -21,15 +21,14 @@ import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.text.rememberTextMeasurer
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import kotlin.io.path.Path
+import com.example.questnavigasiui_236.R
 
-@OptIn(markerClass = ExperimentalMaterial3Api::class)
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun TampilData(
-    onBackBtnClick:() -> unit
+    onBackBtnClick:() -> Unit
 ){
     val items = listOf(
         Pair(first = stringResource(id = R.string.nama_lengkap), second = "Contoh Nama"),
@@ -50,7 +49,7 @@ fun TampilData(
                     items.forEach { item ->
                         Column {
                             Text(text = item.first.uppercase(),
-                                fontsize = 16.sp)
+                                fontSize = 16.sp)
                             Text(text = item.second,
                                 fontWeight = FontWeight.Bold,
                                 fontFamily = FontFamily.Cursive,
@@ -62,7 +61,7 @@ fun TampilData(
                     Button(
                         modifier = Modifier.fillMaxWidth(),
                         onClick = onBackBtnClick) {
-                        Text(text = stringResource(id = "Back"))
+                        Text(text = stringResource(id = R.string.back))
                     }
                 }
             }

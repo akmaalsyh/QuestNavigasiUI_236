@@ -1,6 +1,5 @@
 package com.example.questnavigasiui_236.view
 
-import android.widget.Space
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -10,6 +9,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.material3.Button
+import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.RadioButton
@@ -24,7 +24,9 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import com.example.questnavigasiui_236.R
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun FormIsian(
     jenisK:List<String> = listOf("Laki-laki", "Perempuan"),
@@ -35,7 +37,7 @@ fun FormIsian(
             TopAppBar(
                 title = { Text(text = stringResource(id = R.string.home),
                     color = Color.White)},
-                colors = TopAppBarDefaults,
+                colors = TopAppBarDefaults.
                 topAppBarColors(containerColor = colorResource(id = R.color.teal_700))
             ) }
     ) { isiRuang ->
@@ -53,7 +55,7 @@ fun FormIsian(
             )
             HorizontalDivider(modifier = Modifier
                 .padding(all = 20.dp)
-                .width(width = 250.dp), thickness = Thickness, color =
+                .width(width = 250.dp), thickness = 1.dp, color =
                 Color.Red)
             Row {
                 jenisK.forEach {
@@ -86,7 +88,7 @@ fun FormIsian(
                 modifier = Modifier.fillMaxWidth(fraction = 1f),
                 onClick = OnSubmitBtnClick
             ) {
-                Text(text = stringResource(id = "Submit"))
+                Text(text = stringResource(id = R.string.submit))
             }
         }
     }
