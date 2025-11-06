@@ -18,6 +18,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.unit.dp
 
 @Composable
 fun FormIsian(
@@ -61,6 +62,12 @@ fun FormIsian(
                     }
                 }
             }
+            HorizontalDivider(modifier = Modifier
+                .padding(all = 20.dp)
+                .width(width = 250.dp),
+                thickness = 1.dp,
+                color = Color.Red
+            )
         }
 
     }
