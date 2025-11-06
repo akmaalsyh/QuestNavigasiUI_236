@@ -1,8 +1,10 @@
 package com.example.questnavigasiui_236
 
+import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.navigation.NavController
+import androidx.navigation.NavHost
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import java.lang.reflect.Modifier
@@ -16,4 +18,11 @@ enum class Navigasi {
 fun DataApp (
     navController: NavHostController = rememberNavController(),
     modifier: Modifier
-){}
+){
+    Scaffold { isiRuang ->
+        NavHost(
+            navController = navController,
+            startDestination = Navigasi.Formulir.name,
+        )
+    }
+}
