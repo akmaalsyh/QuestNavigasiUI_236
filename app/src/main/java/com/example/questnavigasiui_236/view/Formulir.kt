@@ -1,10 +1,15 @@
 package com.example.questnavigasiui_236.view
 
+import android.widget.Space
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
+import androidx.compose.material3.Button
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.RadioButton
@@ -76,7 +81,13 @@ fun FormIsian(
                 label = {Text(text = "Alamat")},
                 onValueChange = {},
             )
+            Spacer(modifier = Modifier.height(height = 30.dp))
+            Button(
+                modifier = Modifier.fillMaxWidth(fraction = 1f),
+                onClick = OnSubmitBtnClick
+            ) {
+                Text(text = stringResource(id = "Submit"))
+            }
         }
-
     }
 }
